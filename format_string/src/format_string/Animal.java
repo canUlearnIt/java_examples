@@ -1,0 +1,29 @@
+package format_string;
+
+public class Animal {
+
+	private String name;
+	private int age;
+	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	
+	public String getNiceleyFormattedString() {
+		String message = String.format("Animal name is %s. Animal age is %d.", this.name, this.age);
+
+		return message;
+	}
+	
+}
