@@ -11,10 +11,12 @@ public class RandomNumberProvider {
 		randomNumbers = new SecureRandom();	
 		}
 
+	
 	public int getRandomValue() {
 		return randomValue;
 	}
-	
+
+
 	public void setRandomNumber(int scalingFactor) {
 		randomValue = randomNumbers.nextInt(scalingFactor);
 	}

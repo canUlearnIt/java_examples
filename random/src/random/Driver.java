@@ -1,44 +1,32 @@
 package random;
 
+import java.security.SecureRandom;
+
 public class Driver {
 
 	public static void main(String[] args) {
-		RandomNumberProvider randomNumberProvider = new RandomNumberProvider();
 		
-		randomNumberProvider.setRandomNumber(5);
-		System.out.println(randomNumberProvider.getRandomValue());
+		SecureRandom randomGen = new SecureRandom();
 		
-		randomNumberProvider.setRandomNumber(5);
-		System.out.println(randomNumberProvider.getRandomValue());
+		int randomValue = randomGen.nextInt(3);
 		
-		randomNumberProvider.setRandomNumber(5);
-		System.out.println(randomNumberProvider.getRandomValue());
+		System.out.println("randomValue "  + randomValue);
 		
-		//-------------------------------------------------------
 		
-		System.out.println("-------------------------------------------------");
+		RandomNumberProvider numProvider = new RandomNumberProvider();
+		
+		numProvider.setRandomNumber(5);
+		
+		System.out.println("aaaaa " + numProvider.getRandomValue());
+		
+		numProvider.setRandomNumber(5, 1);
+		
+		System.out.println("bbbbb " + numProvider.getRandomValue());
 
-		randomNumberProvider.setRandomNumber(5, 1);
-		System.out.println(randomNumberProvider.getRandomValue());
 		
-		randomNumberProvider.setRandomNumber(5, 1);
-		System.out.println(randomNumberProvider.getRandomValue());
+		numProvider.setRandomNumber(5, 1, 2);
 		
-		randomNumberProvider.setRandomNumber(5, 1);
-		System.out.println(randomNumberProvider.getRandomValue());
-		
-		//--------------------------------------------------------------
-		
-		System.out.println("-------------------------------------------------");
-		
-		randomNumberProvider.setRandomNumber(5, 1, 3);
-		System.out.println(randomNumberProvider.getRandomValue());
-		
-		randomNumberProvider.setRandomNumber(5, 1, 3);
-		System.out.println(randomNumberProvider.getRandomValue());
-		
-		randomNumberProvider.setRandomNumber(5, 1, 3);
-		System.out.println(randomNumberProvider.getRandomValue());
+		System.out.println("ccccc " + numProvider.getRandomValue());
 	}
 
 }
